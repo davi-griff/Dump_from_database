@@ -40,4 +40,7 @@ pip-selfcheck.json
 /env
 \__pycache__
 
+.vscode
+
+*.sql
 # End of https://www.toptal.com/developers/gitignore/api/venv,microsoftoffice
