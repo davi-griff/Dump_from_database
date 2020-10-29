@@ -14,9 +14,15 @@ sql_scripts = route.sql_files()
 for script in sql_scripts:
     name = script + up.date_yesterday()
     sql_text = sql.reader(script)
-    print('Baixando')
+    print('Baixando ' + name)
     df = sql.execute(sql_text)
-    print('Salvando')
+    print('Salvando ' + name)
     sql.df_to_xlsx(df,path_to_save, name)
+    print('Finalizado')
+    print()
+    input('Pressione qualquer tecla para continuar')
 
+print("Donwloads finalizados. Não esqueça de ajustar as datas nos arquivos finais")
+print('Pressione qualquer tecla para finalizar')
+input()
 

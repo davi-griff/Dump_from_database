@@ -25,6 +25,8 @@ class route():
             return path_to_save
         else:
             Path.mkdir(self.where / self.date)
+            path_to_save = self.where / self.date
+            return path_to_save
 
     def sql_files(self):
         list_of_files = []
