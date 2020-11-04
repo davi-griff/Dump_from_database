@@ -43,4 +43,6 @@ pip-selfcheck.json
 .vscode
 
 *.sql
+
+*.xlsx
 # End of https://www.toptal.com/developers/gitignore/api/venv,microsoftoffice
