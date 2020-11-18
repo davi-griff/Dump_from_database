@@ -12,7 +12,8 @@ sql_scripts = route.sql_files()
 
 
 for script in sql_scripts:
-    name = script + up.date_yesterday()
+    #name = script + up.date_yesterday()
+    name = script.split('.')[0][3:] + ' ' + up.date_yesterday()
     sql_text = sql.reader(script)
     print('Baixando ' + name)
     df = sql.execute(sql_text)

@@ -4,6 +4,7 @@ import psycopg2 as psql
 import codecs
 from codecs import open
 import pathlib
+from datetime import datetime
 
 class SQL():
 
@@ -48,8 +49,11 @@ class SQL():
     def execute(self, query):
         conn = self.connection()
         df = pd.read_sql_query(query,conn)
+
         return df
 
     def df_to_xlsx(self, df,path, name):
-        with pd.ExcelWriter(f'{path}/{name}.xlsx',engine='xlsxwriter', datetime_format='%d/%m/%Y',date_format='%d/%m/%Y') as writer:
-            df.to_excel(writer,index=False,encoding='utf-8')
+        
+        with pd.ExcelWriter(f'{path}/{name}.xlsx',engine='xlsxwriter', datetime_format='dd/mm/yyyy hh:mm:ss',date_format='dd/mm/yyyy') as writer:
+            df.to_excel(writer,index=False)
+        #df.to_excel(f'{path}/{name}.xlsx',index=False)
